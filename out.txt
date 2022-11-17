@@ -1,0 +1,4 @@
+t3
+Total time allocated for Bubble Sort: 316 seconds
+Total time allocated for Selection Sort: 135 seconds
+Total time allocated for Insertion Sort: 102 seconds

@@ -1,0 +1,5 @@
+Test Run 3
+Total time allocated for Bubble Sort: 7918 seconds
+Total time allocated for Selection Sort: 3527 seconds
+Total time allocated for Insertion Sort: 2024 seconds
+Total time allocated for Quick Sort: 17 seconds
