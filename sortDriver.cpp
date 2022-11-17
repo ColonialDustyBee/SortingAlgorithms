@@ -14,7 +14,7 @@ int main() {
 	QuickSort FourthValues;
 	clock_t startTime = 0, endTime = 0;
 	int difference = 0;
-	// Initializes 4 elements to store the value from file onto each vector.
+	// Initializes 3 elements to store the value from file onto each vector. 4th one is within the header files for ease.
 	vector<int> elementsForBubbleSort;
 	vector<int> elementsForSelectionSort;
 	vector<int> elementsForInsertionSort;
@@ -23,22 +23,22 @@ int main() {
 	string inputFileName, outputFileName, testName, command;
 	char character = 0;
 	bool end = false;
-	//cout << "Please input file name: ";
-	//cin >> inputFileName;
-	inFile.open("input.txt");
+	cout << "Please input file name: ";
+	cin >> inputFileName;
+	inFile.open(inputFileName);
 	while (!inFile) {
 		cout << "ERROR, file not found!, enter again: ";
 		cin.ignore();
 		getline(cin, inputFileName);
 		inFile.open(inputFileName);
 	}
-	//cout << "\nPlease enter name of output file: ";
-	//cin >> outputFileName;
-	outFile.open("out.txt");
-	//cout << "\nPlease enter name of output label: ";
-	//cin.ignore();
-	//getline(cin, testName);
-	//outFile << testName << endl;
+	cout << "\nPlease enter name of output file: ";
+	cin >> outputFileName;
+	outFile.open(outputFileName);
+	cout << "\nPlease enter name of output label: ";
+	cin.ignore();
+	getline(cin, testName);
+	outFile << testName << endl;
 	int i = 0;
 	while (!end) {
 		inFile >> command;
@@ -54,14 +54,14 @@ int main() {
 		}
 	}
 	
-	// Time for Bubble Sort
-	/*
+	// Time for Bubble Sort (FIXED)
+	cout << "Calculating time for Bubble Sort..." << endl;
 	startTime = clock();
 	FirstValues.bubbleSort(elementsForBubbleSort);
 	endTime = clock();
 	difference = difftime(endTime, startTime);
-	outFile << "Total time allocated for Bubble Sort: " << difference << endl;
-	*/
+	outFile << "Total time allocated for Bubble Sort: " << difference << " seconds" << endl;
+	cout << "Finished!" << endl;
 	// Time for Selection Sort (FIXED)
 	cout << "Calculating time for Selection sort..." << endl;
 	startTime = clock();
