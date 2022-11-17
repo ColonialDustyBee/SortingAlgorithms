@@ -39,29 +39,29 @@ void InsertionSort::insertionSort(vector<int> elements) {
 // Bubble Sort
 BubbleSort::BubbleSort() { };
 void BubbleSort::bubbleSort(vector<int> elements) {
-	int end = elements.back() - 1; // access end of array.
+	int end = elements.size() - 1; // access end of array.
 	for (i = 0; i < end - 1; i++) {
 		for (j = 0; j < end - i - 1; j++) {
-			if (elements[i] > elements[j]) {
-				swap(elements[i], elements[j]);
+			if (elements[j] > elements[j + 1]) {
+				swap(elements[j], elements[j + 1]);
 			}
 		}
 	}
 }
-// QuickSort (takes the first place as the pivot point)
+// QuickSort (takes the last place as pivot)
 QuickSort::QuickSort() { };
 int QuickSort::partition(int low, int high) { // Low and high will be initialized in the driver file. 
 	int pivot = elementsForQuickSort[low]; // starts at the beginning of the list. The equivalent of this is pivot = elements[0];
 	i = low;
 	j = high;
 	while (i < j) {
-		do {
+		do { // left of array
 			i++;
 		} while (elementsForQuickSort[i] <= pivot);
-		do {
+		do { // right of array
 			j--;
 		} while (elementsForQuickSort[j] > pivot);
-		if (i < j) {
+		if (i < j) { // if left is less than right it should swap.
 			swap(elementsForQuickSort[i], elementsForQuickSort[j]);
 		}
 	}
@@ -71,7 +71,7 @@ int QuickSort::partition(int low, int high) { // Low and high will be initialize
 void QuickSort::quickSort(int low, int high) { // Will be called first.
 	if (low < high) {
 		j = partition(low, high); // This will be the new pivot point
-		quickSort(low, j);
+		quickSort(low, j - 1);
 		quickSort(j + 1, high - 1);
 	}
 }
